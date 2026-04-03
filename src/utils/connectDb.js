@@ -1,4 +1,3 @@
-import ApiError from "./apiError.js";
 import mongoose from "mongoose";
 
 const connectionString = process.env.DB_CONNECTION_STRING;
@@ -10,7 +9,7 @@ const connectToDb = async () => {
             `Voila ! Connected to db at host ${connection.connections[0].host}`,
         );
     } catch (error) {
-        throw new ApiError(`Couldn't connect to db`, 500);
+        throw new Error(`Couldn't connect to db`);
     }
 };
 

@@ -3,10 +3,13 @@ import ApiResponse from "../apiResponse.js";
 
 const errorHander = (err, req, res, next) => {
     if (err instanceof ApiError) {
-        const { message } = err;
-        return ApiResponse.badRequest(res, message);
+        const { message, statusCode } = err;
+        return ApiResponse.sendResponse(res, false, statusCode, message);
     }
-    return ApiResponse.internalServerError(res, "Internal Server Error");
+    return ApiResponse.internalServerError(
+        res,
+        err.message || "Internal Server Error",
+    );
 };
 
 export default errorHander;
