@@ -1,37 +1,38 @@
 {
-  "name": "auth-module",
-  "version": "1.0.0",
-  "description": "user authentication module",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.{js,ts,json}": "prettier --write"
-  },
-  "keywords": [
-    "authentication"
-  ],
-  "author": "Lalit",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^17.4.0",
-    "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.3.3"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/jsonwebtoken": "^9.0.10",
-    "git-format-staged": "^4.0.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "nodemon": "^3.1.14",
-    "prettier": "^3.8.1",
-    "simple-git-hooks": "^2.13.1",
-    "typescript": "^6.0.2"
-  }
+    "name": "auth-module",
+    "version": "1.0.0",
+    "description": "user authentication module",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/index.js",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "*.{js,ts,json}": "prettier --write"
+    },
+    "keywords": [
+        "authentication"
+    ],
+    "author": "Lalit",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^17.4.0",
+        "express": "^5.2.1",
+        "joi": "^18.1.2",
+        "jsonwebtoken": "^9.0.3",
+        "mongoose": "^9.3.3"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/jsonwebtoken": "^9.0.10",
+        "git-format-staged": "^4.0.1",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.4.0",
+        "nodemon": "^3.1.14",
+        "prettier": "^3.8.1",
+        "simple-git-hooks": "^2.13.1",
+        "typescript": "^6.0.2"
+    }
 }
