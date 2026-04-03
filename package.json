@@ -9,6 +9,9 @@
     "dev": "nodemon src/index.js",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{js,ts,json}": "prettier --write"
+  },
   "keywords": [
     "authentication"
   ],
@@ -24,6 +27,8 @@
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "git-format-staged": "^4.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "nodemon": "^3.1.14",
     "prettier": "^3.8.1",
     "simple-git-hooks": "^2.13.1",
