@@ -1,7 +1,11 @@
 import User from "../model.js";
+import { defaultExcludeFieldsFromDB } from "../../utils/constants.js";
 
 const getProfileService = async (userId) => {
-    const user = await User.findOne({ _id: userId }, { _id: 0, __v: 0 });
+    const user = await User.findOne(
+        { _id: userId },
+        defaultExcludeFieldsFromDB,
+    );
     const userObj = user.toObject();
 
     delete userObj.password;

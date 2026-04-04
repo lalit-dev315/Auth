@@ -7,16 +7,13 @@ const registerService = async (data) => {
     let user = await User.findOne({ email });
 
     if (user) {
-        throw new ApiError(`User with email ${email} already exists!`, 400);
+        throw new ApiError(`User with email ${email} already exists!`, 409);
     }
 
     user = await User.findOne({ username });
 
     if (user) {
-        throw new ApiError(
-            `User with username ${username} already exists!`,
-            400,
-        );
+        throw new ApiError(`Username ${username} not available!`, 409);
     }
 
     user = await User.create({

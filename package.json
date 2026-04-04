@@ -18,6 +18,8 @@
     "author": "Lalit",
     "license": "ISC",
     "dependencies": {
+        "bcryptjs": "^3.0.3",
+        "crypto": "^1.0.1",
         "dotenv": "^17.4.0",
         "express": "^5.2.1",
         "joi": "^18.1.2",
