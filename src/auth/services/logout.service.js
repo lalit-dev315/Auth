@@ -7,7 +7,7 @@ const logoutService = async (userId) => {
 
     // delete the session
     const cacheKey = `${userId}`;
-    cache.del(cacheKey);
+    cache.remove(cacheKey);
 
     user.save();
 };

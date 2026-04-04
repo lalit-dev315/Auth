@@ -32,7 +32,7 @@ const loginService = async (identifier, password) => {
 
     // create session
     const cacheKey = `${user._id}`;
-    cache.set(cacheKey, true);
+    cache.add(cacheKey, true);
 
     return {
         accessToken,

@@ -13,7 +13,7 @@ const resetPasswordService = async (token, password) => {
         user.password = password;
 
         user.refreshToken = null;
-        cache.del(String(user._id));
+        cache.remove(String(user._id));
 
         user.save();
     } catch (error) {
