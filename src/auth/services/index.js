@@ -4,6 +4,7 @@ import getProfileService from "./getProfile.service.js";
 import logoutService from "./logout.service.js";
 import forgotPasswordService from "./forgotPassword.service.js";
 import resetPasswordService from "./resetPassword.js";
+import refreshTokensService from "./refreshTokens.service.js";
 
 export {
     registerService,
@@ -12,4 +13,5 @@ export {
     logoutService,
     forgotPasswordService,
     resetPasswordService,
+    refreshTokensService,
 };

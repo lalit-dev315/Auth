@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import { genereateResetToken } from "../../utils/tokens.js";
 
 const forgotPasswordService = async (email) => {
     // send email to the user
@@ -8,11 +8,6 @@ const forgotPasswordService = async (email) => {
     return {
         resetToken,
     };
-};
-
-const genereateResetToken = (payload, secret) => {
-    const resetToken = jwt.sign(payload, secret, { expiresIn: "2m" });
-    return resetToken;
 };
 
 export default forgotPasswordService;

@@ -6,12 +6,14 @@ import {
     logoutController,
     forgotPasswordController,
     resetPasswordController,
+    refreshTokensController,
 } from "./controllers/index.js";
 import {
     registerValidator,
     loginValidator,
     forgotPasswordValidator,
     resetPasswordValidator,
+    refreshTokensValidator,
 } from "./validators/index.js";
 import isLoggedIn from "./middlewares/isLoggedIn.js";
 
@@ -27,5 +29,6 @@ router.post(
     forgotPasswordController,
 );
 router.post("/reset-password", resetPasswordValidator, resetPasswordController);
+router.post("/refresh", refreshTokensValidator, refreshTokensController);
 
 export default router;

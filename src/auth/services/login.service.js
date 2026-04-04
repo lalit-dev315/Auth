@@ -1,6 +1,9 @@
 import User from "../model.js";
 import ApiError from "../../utils/apiError.js";
-import jwt from "jsonwebtoken";
+import {
+    generateAccessToken,
+    generateRefreshToken,
+} from "../../utils/tokens.js";
 import bcrypt from "bcryptjs";
 import cache from "../../utils/cache.js";
 
@@ -20,7 +23,7 @@ const loginService = async (identifier, password) => {
         throw new ApiError("Invalid username or password", 401);
     }
 
-    const payload = { userId: user._id };
+    const payload = { userId: String(user._id) };
     const accessToken = generateAccessToken(payload, JWT_ACCESS_TOKEN_SECRET);
     const refreshToken = generateRefreshToken(
         payload,
@@ -38,16 +41,6 @@ const loginService = async (identifier, password) => {
         accessToken,
         refreshToken,
     };
-};
-
-const generateAccessToken = (payload, secret) => {
-    const accessToken = jwt.sign(payload, secret, { expiresIn: "2m" });
-    return accessToken;
-};
-
-const generateRefreshToken = (payload, secret) => {
-    const refreshToken = jwt.sign(payload, secret, { expiresIn: "7d" });
-    return refreshToken;
 };
 
 export default loginService;
