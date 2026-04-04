@@ -2,6 +2,7 @@ import User from "../model.js";
 import ApiError from "../../utils/apiError.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import cache from "../../utils/cache.js";
 
 const { JWT_ACCESS_TOKEN_SECRET, JWT_REFRESH_TOKEN_SECRET } = process.env;
 
@@ -28,6 +29,10 @@ const loginService = async (identifier, password) => {
 
     user.refreshToken = refreshToken;
     user.save();
+
+    // create session
+    const cacheKey = `${user._id}`;
+    cache.set(cacheKey, true);
 
     return {
         accessToken,

@@ -16,7 +16,7 @@ app.listen(port, () => {
 // global middlewares
 app.use(express.json());
 
-app.use(userRouter);
+app.use("/api/v1/auth", userRouter);
 
 // global error handler
 app.use(errorHander);

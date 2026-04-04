@@ -1,3 +1,5 @@
+import ApiError from "../apiError.js";
+
 const inputValidator = (schema) => {
     return (req, _, next) => {
         const { error } = schema.validate(req.body);
